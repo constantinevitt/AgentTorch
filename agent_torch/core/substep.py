@@ -60,6 +60,8 @@ class SubstepAction(nn.Module, ABC):
 
 
 class SubstepTransition(nn.Module, ABC):
+    name: str | None = None
+
     def __init__(self, config, input_variables, output_variables, arguments):
         super().__init__()
         self.config = config

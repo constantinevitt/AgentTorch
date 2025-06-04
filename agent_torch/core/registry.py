@@ -1,7 +1,9 @@
-import pandas as pd
-import torch
+from typing import Type
+
 import torch.nn as nn
 import json
+
+from agent_torch.core.substep import SubstepTransition
 
 
 class Registry(nn.Module):
@@ -41,3 +43,20 @@ class Registry(nn.Module):
         return decorator
 
     register_substep = register_helper
+
+    def register_transition(
+        self,
+        obj_source: Type[SubstepTransition],
+        name: str = None,
+    ) -> None:
+        obj_name = obj_source.__dict__.get("name", None)
+        if name is not None:
+            obj_name = name
+
+        if obj_name is None:
+            raise ValueError(
+                "SubstepTransition must implement a 'name' attribute "
+                "or one must be provided explicitly."
+            )
+
+        self.register(obj_source, obj_name, key="transition")
