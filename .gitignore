@@ -30,3 +30,5 @@ cache/
 dist/
 
 *.parquet
+
+.idea/

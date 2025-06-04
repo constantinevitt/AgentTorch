@@ -11,7 +11,7 @@ maintainers = [
     {name = "Ayush Chopra"},
     {name = "Vedant Kulkarni"}
 ]
-requires-python = ">= 3.8"
+requires-python = ">= 3.10"
 dependencies = [
     "numpy>=1.24.3",
     "pandas>=1.5.0",
@@ -24,7 +24,7 @@ dependencies = [
     "networkx>=3.0",
     "tqdm>=4.66.4",
     "dspy>=0.1.5",
-    "dask>=2024.12.1"
+    "dask>=2024.12.1",
 ]
 
 [project.urls]
@@ -58,4 +58,17 @@ push = true
 "pyproject.toml" = [
     'current_version = "{version}"',
     'version = "{version}"'
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "build>=1.2.2.post1",
+    "bumpver>=2024.1130",
+    "mkdocs>=1.6.1",
+    "pdm>=2.24.2",
+    "pre-commit>=4.2.0",
+    "pytest>=8.4.0",
+    "ruff>=0.11.12",
+    "twine>=6.1.0",
 ]
