@@ -1,6 +1,6 @@
 [project]
 name = "agent_torch"
-version = "0.6.0"
+version = "0.6.1"
 description = "large population models"
 readme = "readme.md"
 license = {text = "MIT"}
@@ -42,7 +42,7 @@ distribution = true
 excludes = ["populations", "models"]
 
 [tool.bumpver]
-current_version = "0.6.0"
+current_version = "0.6.1"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "chore: {old_version} -> {new_version}"
 tag_scope = "default"
